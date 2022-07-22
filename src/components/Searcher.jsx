@@ -20,11 +20,11 @@ export const Searcher = (props) => {
         id="outlined-basic"
         label={"Search Github user"}
         placeholder="Octocat"
-        variant="outlined"
         value={valueInput}
         onChange={(e) => setValueInput(e.target.value)}
         sx={{
           width: "90%",
+          background: "#DEDEDE"
         }}
         size="small"
         InputProps={{

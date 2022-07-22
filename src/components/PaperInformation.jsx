@@ -6,18 +6,37 @@ export const PaperInformation = (props) => {
   const { public_repos, followers, following } = userState;
   return (
     <Paper elevation={3}>
-      <Stack>
-        <Stack>
-        <Typography>Repos</Typography>
-        <Typography>{ public_repos }</Typography>
+      <Stack
+        spacing={{ xs: 3, md: 2, sm: 1 }}
+        direction={{ xs: "row", md: "row", sm: "column" }}
+        sx={{
+          justifyContent: "space-evenly",
+          margin: "20px",
+        }}
+      >
+        <Stack
+          sx={{
+            alignItems: "center",
+          }}
+        >
+          <Typography variant="h5">Repos</Typography>
+          <Typography variant="h6">{public_repos}</Typography>
         </Stack>
-        <Stack>
-        <Typography>Followers</Typography>
-        <Typography>{ followers }</Typography>
+        <Stack
+          sx={{
+            alignItems: "center",
+          }}
+        >
+          <Typography variant="h5">Followers</Typography>
+          <Typography variant="h6">{followers}</Typography>
         </Stack>
-        <Stack>
-        <Typography>Following</Typography>
-        <Typography>{ following }</Typography>
+        <Stack
+          sx={{
+            alignItems: "center",
+          }}
+        >
+          <Typography variant="h5">Following</Typography>
+          <Typography variant="h6">{following}</Typography>
         </Stack>
       </Stack>
     </Paper>

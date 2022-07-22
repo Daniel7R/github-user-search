@@ -7,29 +7,46 @@ export const LocationInformation = (props) => {
   const { location, twitter_username, blog, company } = userState;
 
   return (
-    <Grid container>
+    <Grid
+      container
+      columns={{xs: 2, sm: 1, md: 1}}
+      spacing={{ xs: 2, md: 2, sm: 1 }}
+      sx={{
+        marginTop: "10px",
+      }}
+    >
       <Grid item xs={6}>
-        <Stack>
+        <Stack direction="row" spacing={2}>
           <LocationOn />
-          <Typography>{location !== null ? location : "Not available"}</Typography>
+          <Typography>
+            {location !== null ? location : "Not available"}
+          </Typography>
         </Stack>
       </Grid>
       <Grid item xs={6}>
-        <Stack>
+        <Stack direction="row" spacing={2}>
           <Twitter />
-          <Typography>{twitter_username !== null ? twitter_username : "Not available"}</Typography>
+          <Typography>
+            {twitter_username !== null ? twitter_username : "Not available"}
+          </Typography>
         </Stack>
       </Grid>
       <Grid item xs={6}>
-        <Stack>
+        <Stack direction="row" spacing={2}>
           <Language />
-          <Typography>{blog !== "" ? blog : "Not available"}</Typography>
+          {blog !== "" ? (
+            <a target={"_blank"} href={blog} ><Typography>{blog}</Typography></a>
+          ) : (
+            <Typography>Not available</Typography>
+          )}
         </Stack>
       </Grid>
       <Grid item xs={6}>
-        <Stack>
+        <Stack direction="row" spacing={2}>
           <Business />
-          <Typography>{company !== null ? company: "Not available"}</Typography>
+          <Typography>
+            {company !== null ? company : "Not available"}
+          </Typography>
         </Stack>
       </Grid>
     </Grid>

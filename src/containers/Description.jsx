@@ -9,11 +9,13 @@ export const Description = (props) => {
   const { bio } = userState;
   return (
     <>
-      <Stack>
+      <Stack sx={{
+        justifyContent: "center",
+      }}>
         {bio !== null ? (
-          <Typography>{bio}</Typography>
+          <Typography variant="body1">{bio}</Typography>
         ) : (
-          <Typography>
+          <Typography variant="body1">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </Typography>
